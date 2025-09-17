@@ -9,6 +9,7 @@ pygame.display.set_caption('Fourier drawing')
 running = True
 black = (0,0,0)
 white = (255,255,255)
+import load_svg
 
 
 def lerp(a, b, t, t_min=0, t_max=100):
@@ -61,7 +62,6 @@ def compute_fourier(points):
 clock = pygame.time.Clock()
 t = 0
 path = []
-mode = "draw"
 pen = False
 drawing = []
 coefficients = []
@@ -72,6 +72,13 @@ resolution_slider = slider.Slider(1235, 750, 350, 20, 1, 100, 100, percent=True)
 resolution = 100
 update_vectors = False
 draw_colour = (0,255,0)
+
+mode = "plot"
+points = [complex(i[0], -i[1]) for i in load_svg.load_svg("humberger-svgrepo-com.svg")]
+points = [complex(i[0], -i[1]) for i in load_svg.load_svg("svg-svgrepo-com.svg", density=0.1, scale=0.5, offset=(-100,-100))]
+points = [complex(i[0], -i[1]) for i in load_svg.load_svg("clash-mini-svgrepo-com.svg", density=1, scale=5)]
+coefficients, full_vectors = compute_fourier(points)
+vectors = full_vectors
 
 
 while running:
@@ -128,7 +135,7 @@ while running:
                     full_vectors = []
                     vectors = []
                     path = []
-                else:
+                elif pygame.mouse.get_pos()[0] <= 800:
                     pen = False
                     mode = "plot"
                     points = [complex(*(coordinate(*i, mode="draw"))) for i in drawing]
