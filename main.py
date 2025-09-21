@@ -73,12 +73,13 @@ resolution = 100
 update_vectors = False
 draw_colour = (0,255,0)
 
-mode = "plot"
-points = [complex(i[0], -i[1]) for i in load_svg.load_svg("humberger-svgrepo-com.svg")]
-points = [complex(i[0], -i[1]) for i in load_svg.load_svg("svg-svgrepo-com.svg", density=0.1, scale=0.5, offset=(-100,-100))]
-points = [complex(i[0], -i[1]) for i in load_svg.load_svg("clash-mini-svgrepo-com.svg", density=1, scale=5)]
-coefficients, full_vectors = compute_fourier(points)
-vectors = full_vectors
+mode = "draw"
+#mode = "plot"
+#points = [complex(i[0], -i[1]) for i in load_svg.load_svg("svg/humberger-svgrepo-com.svg")]
+#points = [complex(i[0], -i[1]) for i in load_svg.load_svg("svg/svg-svgrepo-com.svg", density=0.1, scale=0.5, offset=(-100,-100))]
+#points = [complex(i[0], -i[1]) for i in load_svg.load_svg("svg/clash-mini-svgrepo-com.svg", density=1, scale=5)]
+#coefficients, full_vectors = compute_fourier(points)
+#vectors = full_vectors
 
 
 while running:
