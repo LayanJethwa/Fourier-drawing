@@ -4,6 +4,8 @@ This project draws an arbitrary curve using the discrete Fourier series to visua
 
 ## Usage
 
+Go to the website at: [https://layanjethwa.github.io/Fourier-drawing/](https://layanjethwa.github.io/Fourier-drawing/)
+
 Click in the left side of the screen to begin the drawing, and click again to finish drawing. As the Fourier series is periodic, a closed loop will work best.
 
 The slower you draw, the more vectors it will have to compute, so don't draw for too long otherwise it will run quite slowly.
@@ -12,4 +14,4 @@ The left slider changes the frame rate, which changes the speed of the animation
 
 ## Demo
 
-![Showcase gif]()
+![Showcase gif](https://github.com/LayanJethwa/Fourier-drawing/blob/main/showcase.gif)
